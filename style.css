@@ -1,0 +1,1288 @@
+/* General Styles (unchanged) */
+h2 {
+  font-size: 2.2rem; /* Slightly smaller font size */
+  margin-bottom: 2rem;
+  color: #222; /* Darker heading for readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle text shadow for depth */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for color and shadow */
+  position: relative;
+  padding-bottom: 0.5rem; /* Space for the pseudo-element border */
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2962ff; /* Border color */
+  transform: translateX(-50%); /* Center the border */
+  transition: width 0.3s ease; /* Smooth transition for border width */
+}
+
+h2:hover {
+  color: #2962ff; /* Change color on hover */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
+}
+
+h2:hover::after {
+  width: 50%; /* Expand the border on hover */
+}
+
+p {
+  font-size: 1.1rem; /* Adjust to your desired base font size */
+  line-height: 1.6;
+  color: #333; /* Adjust to your desired base text color */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for color and background */
+  padding: 0.5rem 1rem; /* Add some padding around the text */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+p:hover {
+  color: #2962ff; /* Change text color on hover */
+  background-color: rgba(41, 98, 255, 0.1); /* Add a light background color on hover */
+  cursor: default; /* Change cursor to default to indicate no action */
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f0f4ff, #e8f0fe);
+  color: #444;
+  line-height: 1.7;
+  overflow-x: hidden;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles (slightly adjusted) */
+.header {
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding: 0.75rem; /* Further Reduced Header Padding */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Styles */
+.header-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  max-width: 65px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.header-logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Styles */
+.header-nav {
+  align-items: center;
+  flex: auto;
+}
+
+.header-nav-list {
+  display: flex;
+  justify-content: center;  /* Center items horizontally */
+  align-items: center;    /* Center items vertically */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-nav-item {
+  margin: 0 0.75rem;
+  display: flex;          /* Use flexbox on list items */
+  justify-content: center;  /* Center content within list items */
+  align-items: center;    /* Vertically center, if needed */
+}
+
+.header-nav-link {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #424242;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0.4rem 0.6rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.header-nav-link:hover {
+  color: #2962ff;
+  background: rgba(41, 98, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 2px 5px rgba(41, 98, 255, 0.3);
+}
+
+/* Social Icons Styles */
+.header-social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-social-icons-a {
+  margin-left: 0.5rem; /* Further reduced spacing for mobile */
+  display: inline-block;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header-social-icons-a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+}
+
+.header-social-icons img {
+  width: 1.75rem; /* Reduced icon size on mobile */
+  height: 1.75rem;
+  display: block;
+  transition: opacity 0.3s ease;
+  opacity: 0.75;
+}
+
+.header-social-icons img:hover {
+  opacity: 1;
+}
+
+/* Hamburger Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px; /* Slightly smaller hamburger on mobile */
+  height: 18px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 100%;
+  height: 2px;
+  background-color: #555;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Responsive Design (Major Changes) */
+@media (max-width: 932px) {
+
+  body {
+    margin-top: 200px; /* Adjust this value as needed */
+  }
+
+  .header-container {
+    flex-direction: row;
+    align-items: center; /* Keeps things vertically centered */
+    justify-content: space-between; /* Maintains space between elements */
+  }
+
+  .header-logo {
+    max-width: auto;
+    margin-bottom: 0;
+  }
+
+  .header-nav {
+    display: none; /* Hide nav by default */
+    order: 3; /* Place below logo and hamburger */
+    width: 100%; /* Take up the whole line */
+    text-align: center; /* Center the content */
+  }
+
+  .header-nav.active {
+    display: block; /* Show the menu */
+  }
+
+  .header-nav-list {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    padding: 0.5rem; /* Add some padding */
+  }
+
+  .header-nav-item {
+    margin: 0.5rem 0; /* Add vertical spacing */
+  }
+
+  .header-social-icons {
+    justify-content: flex-end; /* Push social icons to the right */
+    margin-top: 0;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger */
+    margin-left: auto; /* Push to the right */
+  }
+}
+
+/* Smallest Mobile Screens */
+@media (max-width: 576px) {
+
+  body {
+    margin-top: 200px; /* Adjust this value as needed */
+  }
+
+  .header {
+    padding: 0.5rem; /* Even less padding on smallest screens */
+  }
+
+  .header-logo img {
+    max-width: auto;  /* Tiny screens */
+  }
+
+  .header-nav-link {
+    font-size: 0.7rem; /* Even smaller text on tiny screens */
+    padding: 0.2rem 0.4rem;
+  }
+
+  .header-social-icons img {
+    width: 1.5rem;  /* Further reduced icon size */
+    height: 1.5rem;
+  }
+}
+
+/* Main Content Styles */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section {
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.section h2 {
+  font-size: 2.4em;
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* About Section Styles */
+#about {
+  margin-top: 40px;
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+}
+
+#about h2 {
+  font-size: 2.75rem; /* Slightly larger heading */
+  font-weight: 700; /* Bolder heading */
+  color: #222; /* Darker text color */
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+#about p {
+  font-size: 1.2rem; /* Adjusted font size */
+  line-height: 1.9; /* Increased line height for readability */
+  color: #444; /* Darker text color */
+  margin-bottom: 2rem; /* More space below paragraph */
+  text-align: center;
+  padding: 0 1rem; /* Added padding to sides for better look on wider screens */
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 97%;
+  padding: 20px;
+  border-radius: 1.25rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  background-color: #fff; /* Solid background color */
+  margin-bottom: 2.5rem; /* More space below the gallery */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE, Edge */
+}
+
+.gallery::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome, Safari and Opera */
+}
+
+.gallery img {
+  width: 250px; /* Increased image width for better visibility */
+  height: 200px; /* Adjusted height */
+  object-fit: cover;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 1rem; /* More rounded corners for images */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced subtle shadow for images */
+}
+
+.gallery img:hover {
+  transform: scale(1.12); /* More pronounced scale-up on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #about {
+    padding: 2rem 1.5rem;
+    margin-top: 30px; /* Reduce margin-top */
+    margin-bottom: 2rem; /* Reduce margin-bottom */
+  }
+
+  #about h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  #about p {
+    font-size: 1.1rem;
+    line-height: 1.7; /* Slightly tighter line height */
+    margin-bottom: 1.5rem;
+    padding: 0; /* Remove side padding */
+  }
+
+  .gallery {
+    padding: 15px; /* Reduce gallery padding */
+    gap: 15px; /* Reduce image gap */
+    margin-bottom: 2rem; /* Reduce gallery margin-bottom */
+  }
+
+  .gallery img {
+    width: 200px; /* Further reduce image width */
+    height: 160px; /* Adjusted height */
+    border-radius: 0.75rem; /* Smaller border-radius */
+  }
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  #about h2 {
+    font-size: 2rem; /* Even smaller heading */
+  }
+
+  .gallery {
+    padding: 10px; /* Further reduce gallery padding */
+    gap: 10px; /* Further reduce image gap */
+  }
+
+  .gallery img {
+    width: 150px; /* Further reduce image width */
+    height: 120px; /* Adjusted height */
+  }
+}
+
+/* Kids Camp Section */
+#kids-camp {
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+}
+
+#kids-camp h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#kids-camp p {
+  text-align: center;
+}
+
+.camp-gallery {
+  padding: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.camp-gallery img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.camp-gallery img:hover {
+  transform: scale(1.08);
+}
+
+.camp-info h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.camp-info p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.camp-details {
+  margin-bottom: 2rem;
+}
+
+.camp-details h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.camp-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.camp-details li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .camp-gallery img {
+      width: 250px;
+      height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .camp-gallery img {
+      width: 100%;
+      height: auto;
+  }
+}
+
+/* Persons Section Styles */
+#persons {
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+}
+
+#persons h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Character Gallery Styles */
+.character-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Character Styles - Image Gallery Version */
+.character {
+  width: 100%; /* Take full width on smaller screens */
+  max-width: 350px; /* Maximum width on larger screens */
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem auto; /* Center the card horizontally */
+}
+
+.character:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.character-gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem; /* Leave space for scrollbar (if visible) */
+}
+
+.character-gallery img {
+  width: 120px; /* Smaller image size */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.character-gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Hide scrollbar */
+.character-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+
+.character-gallery::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.character-gallery::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.character h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.character p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+  .character {
+    padding: 1rem;
+  }
+
+  .character-gallery img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .character h3 {
+    font-size: 1.2rem;
+  }
+
+  .character p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mascots Section Styles */
+#mascots {
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#mascots h2 {
+  font-size: 2.75rem; /* Slightly larger and bolder */
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.75rem;
+}
+
+.mascot-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem; /* More padding inside the item */
+  border-radius: 1rem; /* Slightly more rounded corners */
+  background-color: #fff; /* White background for the item */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Refined shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mascot-item:hover {
+  transform: translateY(-7px); /* More pronounced lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+}
+
+.mascot-item img {
+  width: 100%;
+  max-width: 350px; /* Slightly larger image max-width */
+  height: auto;
+  border-radius: 0.75rem; /* Slightly more rounded corners */
+  margin-bottom: 1.25rem; /* Increased spacing below image */
+  object-fit: cover;
+  transition: box-shadow 0.3s ease; /* Smooth transition for image shadow */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for images */
+}
+
+.mascot-item img:hover {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.mascot-item h3 {
+  font-size: 1.75rem; /* Slightly larger heading */
+  margin-bottom: 1rem; /* Increased spacing below heading */
+  color: #333;
+}
+
+.mascot-item p {
+  font-size: 1.2rem; /* Slightly larger paragraph text */
+  line-height: 1.7; /* Adjusted line height */
+  color: #555;
+  margin-bottom: 0.75rem; /* Adjusted spacing below paragraph */
+}
+
+.price {
+  font-size: 1.3rem; /* Slightly larger price text */
+  font-weight: 600;
+  color: #2ecc71; /* More vibrant green */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #mascots {
+      padding: 2rem 1.5rem;
+  }
+
+  #mascots h2 {
+      font-size: 2.25rem;
+  }
+
+  .mascot-item {
+      padding: 1.5rem;
+  }
+
+  .mascot-item img {
+      max-width: 100%;
+      border-radius: 0.6rem;
+  }
+
+  .mascot-item h3 {
+      font-size: 1.5rem;
+  }
+
+  .mascot-item p {
+      font-size: 1.1rem;
+      line-height: 1.6; /* Adjusted line height */
+  }
+
+  .price {
+      font-size: 1.2rem;
+  }
+}
+
+/* Program Section Styles (White Theme) */
+#programs {
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+#programs .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-snap-type: x mandatory; /* Snap scrolling to items */
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+  padding-bottom: 1rem;
+}
+
+#programs h3 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #222;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+#programs h3::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2962ff;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+#programs h3:hover {
+  color: #2962ff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#programs h3:hover::after {
+  width: 50%;
+}
+
+.program-item {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2rem; /* Space between items */
+  scroll-snap-align: start; /* Snap alignment to the start of the item */
+  min-width: 300px; /* Minimum width */
+  box-sizing: border-box;
+}
+
+.program-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.program-item img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.program-item h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.program-item p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #programs {
+    padding: 1rem;
+  }
+
+  #programs h2 {
+    font-size: 2rem;
+  }
+
+  .program-item {
+    padding: 1rem;
+    flex: 0 0 90%;
+  }
+
+  .program-item img {
+    max-width: 100%;
+  }
+
+  #programs h3 {
+    font-size: 1.3rem;
+  }
+
+  .program-item p {
+    font-size: 1rem;
+  }
+}
+
+/* Loft Rental Section Styles */
+#loftrental {
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+  width: 100%;  /* Slightly wider */
+  text-align: center;
+  overflow: hidden; /* Prevent image overflow */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#loftrental:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Increased shadow on hover */
+    transform: translateY(-3px);
+}
+
+#loftrental h2 {
+  font-size: 2.75rem; /* Slightly larger heading */
+  font-weight: 700; /* More emphasis */
+  color: #222; /* Darker heading color */
+  margin-bottom: 1.75rem;
+}
+
+.loft-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loft-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;  /* Slightly more spacing */
+  margin-bottom: 1.75rem;
+  width: 100%; /* Ensure the container takes full width */
+}
+
+.loft-images img {
+  width: 100%;
+  max-width: 350px; /* Slightly larger max width */
+  height: auto;
+  border-radius: 0.75rem; /* Slightly larger radius */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* Subtle shadow for images */
+}
+
+.loft-images img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#loftrental p {
+  font-size: 1.15rem; /* Slightly larger paragraph text */
+  line-height: 1.9; /* More generous line height */
+  color: #444; /* Darker paragraph color */
+  padding: 0 1rem; /* Add padding to the sides of the text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #loftrental {
+    padding: 1.75rem 1rem;
+    width: 95%;
+    border-radius: 1rem; /* Adjust radius for smaller screens */
+  }
+
+  #loftrental h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  #loftrental p {
+    font-size: 1.05rem;
+    text-align: left;
+    padding: 0; /* Remove padding on smaller screens */
+  }
+
+  .loft-images {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .loft-images img {
+    max-width: 100%;
+    border-radius: 0.6rem;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #loftrental {
+    padding: 2rem 1rem;
+    width: 95%;
+  }
+
+  #loftrental h2 {
+    font-size: 2rem;
+  }
+
+  #loftrental p {
+    font-size: 1.1rem;
+  }
+
+  .loft-images {
+    flex-direction: column; /* Stack images on smaller screens */
+    align-items: center;
+  }
+
+  .loft-images img {
+    max-width: 100%; /* Images take full width */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-logo {
+    margin-bottom: 1rem;
+  }
+
+  .header-nav {
+    width: 100%;
+  }
+
+  .header-nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-nav-item {
+    margin: 0.75rem 0;
+  }
+
+  .header-social-icons {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .header-social-icons-a {
+    margin: 0 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+      padding: 30px 15px;
+  }
+
+  .section {
+      margin-bottom: 50px;
+  }
+
+  .section h2 {
+      font-size: 2em;
+  }
+
+  /* About Section Responsive */
+  #about {
+    padding: 2rem 1.5rem;
+  }
+
+  #about h2 {
+    font-size: 2.2rem;
+  }
+
+  .gallery {
+    justify-content: space-around;
+  }
+
+  .gallery img {
+    width: 200px;
+    height: 150px;
+  }
+  /* Persons Section Responsive */
+  .character {
+    width: 250px; /* Smaller character width */
+    padding: 1.5rem;
+  }
+
+  .character img {
+    width: 120px; /* Smaller image */
+    height: 120px;
+  }
+
+  .character h3 {
+    font-size: 1.4rem;
+  }
+
+  /* Programs Section Responsive */
+  #programs {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .program-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .program-item h3 {
+    font-size: 1.6rem;
+  }
+  /* Loft Rental Section Responsive */
+  #loftrental {
+    padding: 2.5rem 1.5rem;
+  }
+
+  #loftrental h2 {
+    font-size: 2.2rem;
+  }
+
+  #loftrental p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header-logo img {
+    max-width: 150px;
+  }
+
+  .header-nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .header-social-icons img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  main {
+    padding: 20px 10px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section h2 {
+    font-size: 1.8em;
+  }
+
+    /* About Section Responsive */
+    #about {
+      padding: 1.5rem 1rem;
+    }
+
+    #about h2 {
+      font-size: 2rem;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 120px;
+    }
+  /* Persons Section Responsive */
+  .character {
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .character img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .character h3 {
+    font-size: 1.2rem;
+  }
+
+  .character p {
+    font-size: 1rem;
+  }
+  /* Programs Section Responsive */
+  #programs {
+    padding: 2rem 1rem;
+  }
+
+  .program-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .program-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .program-item p {
+    font-size: 1rem;
+  }
+  /* Loft Rental Section Responsive */
+  #loftrental {
+    padding: 2rem 1rem;
+  }
+
+  #loftrental h2 {
+    font-size: 2rem;
+  }
+
+  #loftrental p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Contact Info Section */
+#contact-info {
+  padding: 3rem 2rem;
+  background-color: #ffffff; /* Lighter background for modern look */
+  border-radius: 1.5rem; /* More rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Enhanced subtle shadow */
+  margin-bottom: 3rem;
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+#contact-info h2 {
+  margin-bottom: 30px;
+  font-size: 2.4em;
+  color: #333;
+}
+
+/* Contact Details */
+#contact-info .contact-details {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact-info .contact-details p {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Social Links */
+#contact-info .social-links {
+  margin-top: 25px;
+}
+
+#contact-info .social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Telegram */
+#contact-info .social-links a.telegram {
+  background-color: #229ED9;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition */
+}
+
+#contact-info .social-links a.telegram:hover {
+  transform: scale(1.1); /* Slight scale up on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* Instagram */
+#contact-info .social-links a.instagram {
+  background: linear-gradient(45deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition */
+}
+
+#contact-info .social-links a.instagram:hover {
+  transform: scale(1.1); /* Slight scale up on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* VK */
+#contact-info .social-links a.vk {
+  background-color: #4A76A8;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add transition */
+}
+
+#contact-info .social-links a.vk:hover {
+  transform: scale(1.1); /* Slight scale up on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+}
+
+/* Added padding to the body to prevent content from being hidden under the fixed header */
+body {
+  padding-top: 80px;
+}
+
+/* Basic styling for the button */
+#scrollToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #f9f9f9;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 16px;
+  opacity: 0; /* Start with 0 opacity for the fade-in */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+}
+
+#scrollToTopBtn img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+}
+
+#scrollToTopBtn.show {
+  display: block; /* Show the button */
+  opacity: 1; /* Fade it in */
+}
+
+/* Optional: Styling to make it prettier */
+#scrollToTopBtn:hover {
+  background-color: #ffffff
+}
